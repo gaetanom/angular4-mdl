@@ -10,24 +10,35 @@
       <form (ngSubmit)="onSubmit()" #addForm="ngForm">
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="name" required
-                    [(ngModel)]="model.name" name="name"
-                    #name="ngModel"/>
+          <input 
+          class="mdl-textfield__input" 
+          type="text" 
+          id="name" 
+          required
+          [(ngModel)]="model.name" name="name"
+          #name="ngModel"/>
           <label class="mdl-textfield__label" for="name">Name</label>
         </div>
 
         <br>
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="lastName" required
-                    [(ngModel)]="model.lastName" name="lastName"
-                    #lastName="ngModel"/>
+          <input 
+          class="mdl-textfield__input" 
+          type="text" 
+          id="lastName" 
+          required
+          [(ngModel)]="model.lastName" name="lastName"
+          #lastName="ngModel"/>
           <label class="mdl-textfield__label" for="lastName">Last Name</label>
         </div>
 
         <br>
 
-        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        <button 
+        type="submit" 
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+        [disabled]="!addForm.form.valid || submitted">
           {{id ? 'Modify' : 'Add'}} Item
         </button>
       </form>
