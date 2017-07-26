@@ -1,0 +1,46 @@
+
+
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col">
+
+      <h2>{{id ? 'Edit' : 'New'}} item</h2>
+
+      <form (ngSubmit)="onSubmit()" #addForm="ngForm">
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="name" required
+                    [(ngModel)]="model.name" name="name"
+                    #name="ngModel"/>
+          <label class="mdl-textfield__label" for="name">Name</label>
+        </div>
+
+        <br>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="lastName" required
+                    [(ngModel)]="model.lastName" name="lastName"
+                    #lastName="ngModel"/>
+          <label class="mdl-textfield__label" for="lastName">Last Name</label>
+        </div>
+
+        <br>
+
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          {{id ? 'Modify' : 'Add'}} Item
+        </button>
+      </form>
+
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+<footer class="mdl-mini-footer"  *ngIf="debugData">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Debug form data</div>
+<pre class="mdl-mini-footer__link-list">
+{{model | json}}
+</pre>
+  </div>
+</footer>

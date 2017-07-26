@@ -1,0 +1,8 @@
+.btnloat {
+    bottom:24px;
+    /* margin-bottom:10px; */
+    padding-top:24px;
+    position:fixed;
+    right:24px;
+    z-index:998;
+}
